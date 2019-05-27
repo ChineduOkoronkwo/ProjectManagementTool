@@ -29,6 +29,7 @@ public class Project {
 	@Column(updatable = false, unique = true)
 	private String projectIdentifier;
 	
+	@NotBlank(message = "Description is required")
 	private String description;
 	
 	@JsonFormat(pattern = "yyyy-mm-dd")
@@ -37,8 +38,10 @@ public class Project {
 	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date end_date;
 	
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date created_At;
 	
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date updated_At;
 	
 	public Project() {}
