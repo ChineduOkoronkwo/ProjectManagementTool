@@ -9,8 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -26,8 +27,6 @@ public class Project {
 	@NotBlank(message = "Project identifier is required")
 	@Size(min = 4, max = 5, message = "Please use 4 to 5 characters")
 	@Column(updatable = false, unique = true)
-	
-	@NotBlank(message = "Project description is required")
 	private String projectIdentifier;
 	
 	private String description;
