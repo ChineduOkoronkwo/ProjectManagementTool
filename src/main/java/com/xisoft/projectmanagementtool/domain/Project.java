@@ -38,6 +38,7 @@ public class Project {
 	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date end_date;
 	
+	@Column(updatable = false)
 	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date created_At;
 	
@@ -63,7 +64,7 @@ public class Project {
 	}
 
 	public void setProjectIdentifier(String projectIdentifier) {
-		this.projectIdentifier = projectIdentifier;
+		this.projectIdentifier = projectIdentifier.toUpperCase();
 	}
 
 	public String getDescription() {
